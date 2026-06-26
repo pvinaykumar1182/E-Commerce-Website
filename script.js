@@ -1,85 +1,107 @@
 let cart = [];
+
 let total = 0;
 
-function addCart(product, price) {
 
-```
-cart.push({
-    name: product,
-    price: price
-});
+function addCart(name, price) {
 
-total += price;
 
-displayCart();
-```
+    let product = {
+
+        name: name,
+        price: price
+
+    };
+
+
+    cart.push(product);
+
+
+    total = total + price;
+
+
+    document.getElementById("cartCount").innerHTML = cart.length;
+
+
+    document.getElementById("totalPrice").innerHTML = total;
+
+
+    displayCart();
 
 }
+
+
+
+
+function removeCart(index) {
+
+
+    total = total - cart[index].price;
+
+
+    cart.splice(index,1);
+
+
+
+    document.getElementById("cartCount").innerHTML = cart.length;
+
+
+    document.getElementById("totalPrice").innerHTML = total;
+
+
+
+    displayCart();
+
+
+}
+
+
+
 
 function displayCart() {
 
-```
-let cartContainer = document.getElementById("cart");
 
-if (!cartContainer) {
-    return;
-}
+    let cartBox = document.getElementById("cart");
 
-cartContainer.innerHTML = "";
 
-for (let i = 0; i < cart.length; i++) {
+    cartBox.innerHTML = "";
 
-    cartContainer.innerHTML += `
-    <div class="cartItem">
-        ${cart[i].name} - ₹${cart[i].price}
-        <button onclick="removeItem(${i})">Remove</button>
-    </div>
-    `;
-}
 
-let cartCount = document.getElementById("cartCount");
 
-if (cartCount) {
-    cartCount.innerText = cart.length;
-}
+    if(cart.length == 0){
 
-let totalPrice = document.getElementById("totalPrice");
+        cartBox.innerHTML = "Your cart is empty";
 
-if (totalPrice) {
-    totalPrice.innerText = "Total: ₹" + total;
-}
-```
+        return;
 
-}
+    }
 
-function removeItem(index) {
 
-```
-total -= cart[index].price;
 
-cart.splice(index, 1);
 
-displayCart();
-```
+    for(let i=0;i<cart.length;i++){
 
-}
 
-function buyNow() {
 
-```
-if (cart.length === 0) {
+        cartBox.innerHTML +=
 
-    alert("Your cart is empty!");
+        `
+        <div class="cartItem">
 
-    return;
-}
+        ${i+1}. ${cart[i].name}
+        - ₹${cart[i].price}
 
-alert("Order placed successfully!\nTotal Amount: ₹" + total);
+        <button onclick="removeCart(${i})">
+        Remove
+        </button>
 
-cart = [];
-total = 0;
 
-displayCart();
-```
+        </div>
+        `;
+
+
+    }
+
+
 
 }

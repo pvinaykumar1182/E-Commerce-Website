@@ -1,260 +1,134 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
 
-    <title>PVR Appliances</title>
-    <link rel="stylesheet" href="style.css">
+
+<title>PVR Appliances</title>
+
+<link rel="stylesheet" href="style.css">
+
 
 </head>
 
-
 <body>
-
 
 <header>
 
-    <h1>PVR Appliances</h1>
 
+<h1>PVR Appliances</h1>
 
-    <nav>
+<div>
 
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Cart</a>
-        <a href="#">Contact</a>
+    Cart: <span id="cartCount">0</span>
 
-    </nav>
+</div>
 
 
 </header>
 
+<section class="products">
 
 
+<div class="card">
 
-<main>
+    <h2>Mobile Phone</h2>
 
+    <p>Latest smartphone</p>
 
-<section>
+    <h3>₹20000</h3>
 
-    <h2>Electronic Products</h2>
+    <button onclick="addCart('Mobile Phone',20000)">
+        Add To Cart
+    </button>
 
-    <p>
-        Welcome to PVR Appliances. Buy quality electronics online.
-    </p>
+</div>
+
+<div class="card">
+
+    <h2>Laptop</h2>
+
+    <p>High performance laptop</p>
+
+    <h3>₹60000</h3>
+
+    <button onclick="addCart('Laptop',60000)">
+        Add To Cart
+    </button>
+
+</div>
+
+<div class="card">
+
+    <h2>Headphones</h2>
+
+    <p>Wireless headphones</p>
+
+    <h3>₹3000</h3>
+
+    <button onclick="addCart('Headphones',3000)">
+        Add To Cart
+    </button>
+
+</div>
+
+<div class="card">
+
+    <h2>Bluetooth Earbuds</h2>
+
+    <p>Wireless earbuds</p>
+
+    <h3>₹2000</h3>
+
+    <button onclick="addCart('Bluetooth Earbuds',2000)">
+        Add To Cart
+    </button>
+
+</div>
+
+<div class="card">
+
+    <h2>Smart TV</h2>
+
+    <p>55 inch 4K Ultra HD Smart TV</p>
+
+    <h3>₹40000</h3>
+
+    <button onclick="addCart('Smart TV',40000)">
+        Add To Cart
+    </button>
+
+</div>
 
 
 </section>
 
+<h2 class="title">
 
 
+Shopping Cart
 
 
-<section>
+</h2>
+
+<div id="cart">
 
 
-<h2>Products</h2>
-
-
-
-
-<div>
-
-
-<h3>Mobile Phone</h3>
-
-<img src="#" alt="Mobile Phone">
-
-
-<p>
-Latest smartphone with advanced features.
-</p>
-
-
-<h4>
-Price: ₹20000
-</h4>
-
-
-<button>
-Add To Cart
-</button>
-
+Your cart is empty
 
 </div>
 
+<h2 class="total">
 
 
+Total: ₹<span id="totalPrice">0</span>
 
 
-<div>
-
-
-<h3>Laptop</h3>
-
-<img src="#" alt="Laptop">
-
-
-<p>
-High performance laptop for students and professionals.
-</p>
-
-
-<h4>
-Price: ₹60000
-</h4>
-
-
-<button>
-Add To Cart
-</button>
-
-
-</div>
-
-
-
-
-
-
-<div>
-
-
-<h3>Headphones</h3>
-
-
-<img src="#" alt="Headphones">
-
-
-<p>
-Wireless headphones with high quality sound.
-</p>
-
-
-<h4>
-Price: ₹3000
-</h4>
-
-
-<button>
-Add To Cart
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<div>
-
-
-<h3>Smart TV</h3>
-
-
-<img src="#" alt="Smart TV">
-
-
-<p>
-55 inch 4K Ultra HD Smart Television.
-</p>
-
-
-<h4>
-Price: ₹40000
-</h4>
-
-
-<button>
-Add To Cart
-</button>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-<section>
-
-
-<h2>Your Cart</h2>
-
-
-<table border="1">
-
-
-<tr>
-
-<th>Product</th>
-
-<th>Price</th>
-
-<th>Action</th>
-
-</tr>
-
-
-<tr>
-
-<td>No items</td>
-
-<td>₹0</td>
-
-<td>
-<button>
-Remove
-</button>
-</td>
-
-
-</tr>
-
-
-</table>
-
-
-<br>
-
-
-<button>
-Buy Now
-</button>
-
-
-
-</section>
-
-
-
-</main>
-
-
-
-
-<footer>
-
-
-<p>
-© 2026 PVR Appliances
-</p>
-
-
-</footer>
+</h2>
 
 <script src="script.js"></script>
 
-
 </body>
-
 
 </html>
